@@ -1,7 +1,4 @@
-from faulthandler import disable
-import math
 from tkinter import *
-from turtle import color
 
 
 root = Tk()
@@ -9,6 +6,23 @@ root.title("Simple Calculator")
 
 e = Entry(root, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+
+
+def button_equal():
+    second_number = e.get()
+    e.delete(0, END)
+
+    if math == "addition":
+        e.insert(0, f_num + int(second_number))
+
+    if math == "subtraction":
+        e.insert(0, f_num - int(second_number))
+
+    if math == "multiplication":
+        e.insert(0, f_num * int(second_number))
+
+    if math == "division":
+        e.insert(0, f_num / int(second_number))
 
 
 def button_click(number):
@@ -29,23 +43,6 @@ def button_add():
     math = "addition"
     f_num = int(first_number)
     e.delete(0, END)
-
-
-def button_equal():
-    second_number = e.get()
-    e.delete(0, END)
-
-    if math == "addition":
-        e.insert(0, f_num + int(second_number))
-
-    if math == "subtraction":
-        e.insert(0, f_num - int(second_number))
-
-    if math == "multiplication":
-        e.insert(0, f_num * int(second_number))
-
-    if math == "division":
-        e.insert(0, f_num / int(second_number))
 
 
 def button_subtract():
@@ -88,7 +85,7 @@ button_8 = Button(root, text="8", padx=40, pady=20, command=lambda: button_click
 button_9 = Button(root, text="9", padx=40, pady=20, command=lambda: button_click(9))
 button_0 = Button(root, text="0", padx=40, pady=20, command=lambda: button_click(0))
 button_add = Button(root, text="+", padx=39, pady=20, command=button_add)
-button_equal = Button(root, text="=", padx=91, pady=20, command=button_equal)
+button_equal = Button(root, text="=", padx=90, pady=20, command=button_equal)
 button_clear = Button(root, text="Clear", padx=28, pady=20, command=button_clear)
 button_subtract = Button(root, text="-", padx=42, pady=20, command=button_subtract)
 button_multiply = Button(root, text="*", padx=41, pady=20, command=button_multiply)
@@ -116,8 +113,6 @@ button_equal.grid(row=4, column=1, columnspan=2)
 button_subtract.grid(row=3, column=3)
 button_multiply.grid(row=1, column=3)
 button_divide.grid(row=2, column=3)
-
-my_button = Button(root, text="Enter Your Name", command=None)
 
 
 root.mainloop()
