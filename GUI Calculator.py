@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 global second_number
 second_number = None
 
@@ -53,6 +54,8 @@ def button_click(number):
 
 def button_clear():
     e.delete(0, END)
+    global second_number
+    second_number = None
 
 
 def button_add():
